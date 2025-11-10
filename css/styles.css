@@ -452,3 +452,95 @@ header {
 .program-card:hover h3 {
   text-shadow: 0 0 10px var(--bright-yellow), 0 0 20px var(--primary-green);
 }
+
+/* ==========================================
+   Get Involved Section Background
+   ========================================== */
+.section.get-involved {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ), 
+    url('../images/green-pattern.png'); /* optional subtle texture */
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  padding: 5rem 2rem;
+  text-align: center;
+  border-radius: 15px;
+}
+
+/* Optional: lighten text and buttons to pop */
+.section.get-involved p {
+  color: var(--bright-yellow);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1rem auto 2rem auto;
+}
+
+/* Glassmorphic cards inside Get Involved */
+.get-involved .program-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.get-involved .program-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 2rem;
+  color: var(--white);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.get-involved .program-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================
+   Get Involved Section Heading Color
+   ========================================== */
+.section.get-involved h2 {
+  color: var(--bright-yellow);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* Get Involved Section - Yellow Heading & Softer Background */
+.section.get-involved {
+  background-color: rgba(45, 122, 46, 0.85); /* slightly darkened green */
+  padding: 4rem 2rem;
+}
+
+.section.get-involved h2 {
+  color: var(--bright-yellow);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.section.get-involved p {
+  color: var(--white);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+
+/* Program Card Images */
+.program-card .program-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
