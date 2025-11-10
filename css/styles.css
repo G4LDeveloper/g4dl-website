@@ -410,3 +410,45 @@ header {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
+
+/* ==========================================
+   Get Involved - Glassmorphic Cards
+   ========================================== */
+.programs.program-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.program-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  color: var(--white);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.program-card h3 {
+  color: var(--bright-yellow);
+  margin-bottom: 1rem;
+}
+
+.program-card p {
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.program-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Optional: subtle glow on hover for cards */
+.program-card:hover h3 {
+  text-shadow: 0 0 10px var(--bright-yellow), 0 0 20px var(--primary-green);
+}
