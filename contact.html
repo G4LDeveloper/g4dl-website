@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact – GROW4LIBERTY</title>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header>
   <div class="logo-title">
     <img src="images/logo.png" alt="GROW4LIBERTY logo" class="logo">
-    <h1>GROW4LIBERTY</h1>
+    <h1><span class="grow">GROW</span><span class="four">4</span><span class="liberty">LIBERTY</span></h1>
   </div>
   <nav id="navbar">
     <a href="index.html">Home</a>
@@ -23,14 +24,32 @@
   <button id="menu-toggle">☰</button>
 </header>
 
-<section class="section">
-  <h2>Contact Us</h2>
-  <p>Email: contact@grow4liberty.org</p>
-  <p>Phone: +123-456-7890</p>
-  <p>Address: 123 Liberty Street, Your City</p>
+<section class="section" style="display: flex; justify-content: center; align-items: center; padding: 3rem; margin: 2rem;">
+  <div class="contact-card" style="background: rgba(45,122,46,0.85); backdrop-filter: blur(12px); padding: 2rem; border-radius: 15px; max-width: 500px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); color: var(--white);">
+    <h2 style="color: var(--bright-yellow); text-align: center;">Contact Us</h2>
+    <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+      <input type="text" name="name" placeholder="Your Name" required style="padding: 0.8rem; border-radius: 10px; border: 1px solid rgba(200,200,200,0.5); background: #ffffff; color: var(--black);">
+      <input type="email" name="email" placeholder="Your Email" required style="padding: 0.8rem; border-radius: 10px; border: 1px solid rgba(200,200,200,0.5); background: #ffffff; color: var(--black);">
+      <textarea name="message" placeholder="Your Message" rows="5" required style="padding: 0.8rem; border-radius: 10px; border: 1px solid rgba(200,200,200,0.5); background: #ffffff; color: var(--black);"></textarea>
+      <button type="submit" class="btn" style="align-self: center;">Send Message</button>
+    </form>
+    <div style="margin-top: 1.5rem; text-align: center;">
+      <p>Email: contact@grow4liberty.org</p>
+      <p>Phone: +123-456-7890</p>
+      <p>Address: 123 Liberty Street, Your City</p>
+    </div>
+  </div>
 </section>
 
 <footer class="footer">
+  <div class="social-links">
+    <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://x.com/Grow4Liberty" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com/grow4liberty" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.tiktok.com/@grow4liberty" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div>
   <p>&copy; 2025 GROW4LIBERTY</p>
 </footer>
 

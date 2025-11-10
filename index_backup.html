@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GROW4LIBERTY – Cultivating Freedom, Innovation & Sustainable Growth</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Slideshow backgrounds */
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1;
+}
+
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+/* Hero text */
+.hero-text {
+  position: relative;
+  z-index: 3;
+  max-width: 90%;
+}
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+.hero-text .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Logo */
+.logo-title {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.logo-title img.logo {
+  height: 60px;
+  margin-right: 15px;
+}
+
+/* Navigation arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 4;
+  padding: 10px;
+  user-select: none;
+}
+.arrow-left { left: 20px; }
+.arrow-right { right: 20px; }
+
+/* Dots indicators */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 4;
+}
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active {
+  background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo-title">
+    <img src="images/logo.png" alt="GROW4LIBERTY logo" class="logo">
+    <h1><span class="grow">GROW</span><span class="four">4</span><span class="liberty">LIBERTY</span></h1>
+  </div>
+  <nav id="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button id="menu-toggle">☰</button>
+</header>
+
+<section class="hero">
+  <!-- Slides -->
+  <div class="hero-slide" style="background-image: url('images/slide1.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('images/slide2.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('images/slide3.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('images/slide4.jpg');"></div>
+
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Hero Text -->
+  <div class="hero-text">
+    <h2>Cultivating Freedom, Innovation & Sustainable Growth</h2>
+    <p>Empowering communities through sustainable farming, entrepreneurship, and liberty.</p>
+    <a href="programs.html" class="btn">Explore Our Programs</a>
+  </div>
+
+  <!-- Arrows -->
+  <div class="arrow arrow-left">&#10094;</div>
+  <div class="arrow arrow-right">&#10095;</div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <div class="dot" onclick="currentSlide(0)"></div>
+    <div class="dot" onclick="currentSlide(1)"></div>
+    <div class="dot" onclick="currentSlide(2)"></div>
+    <div class="dot" onclick="currentSlide(3)"></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Our Mission</h2>
+  <p>GROW4LIBERTY (G4L) is a non-profit organization dedicated to training individuals and communities in sustainable urban farming, entrepreneurial skills, agricultural value addition, and promoting inclusive, liberty-driven development across Africa and beyond.</p>
+  <a href="get-involved.html" class="btn">Join the Movement</a>
+</section>
+
+<section class="section cta">
+  <h2>Be part of a growing community working towards freedom, sustainability, and innovation.</h2>
+  <a href="get-involved.html" class="btn">Get Involved</a>
+</section>
+
+<footer class="footer">
+  <div class="social-links">
+    <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://x.com/Grow4Liberty" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com/grow4liberty" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.tiktok.com/@grow4liberty" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div>
+  <p><strong>Email:</strong> <a href="mailto:info.growforliberty@gmail.com"><i class="fas fa-envelope"></i> info.growforliberty@gmail.com</a></p>
+  <p>&copy; 2025 GROW4LIBERTY. Cultivating Freedom, Innovation & Sustainable Growth.</p>
+</footer>
+
+<script>
+let slides = document.querySelectorAll('.hero-slide');
+let dots = document.querySelectorAll('.dot');
+let current = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => slide.style.opacity = i === index ? '1' : '0');
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  current = index;
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+function prevSlide() {
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+}
+
+function currentSlide(index) {
+  showSlide(index);
+}
+
+showSlide(current);
+let slideInterval = setInterval(nextSlide, 5000);
+
+// Arrow click events
+document.querySelector('.arrow-left').addEventListener('click', () => {
+  prevSlide();
+  resetInterval();
+});
+document.querySelector('.arrow-right').addEventListener('click', () => {
+  nextSlide();
+  resetInterval();
+});
+
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 5000);
+}
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+<!-- Team Preview Section -->
+<section class="section">
+  <h2>Meet Our Team</h2>
+  <p>Discover the people driving freedom, sustainability & innovation at GROW4LIBERTY.</p>
+
+  <div class="team-preview">
+    <!-- Placeholder cards -->
+    <div class="team-card">
+      <img src="images/placeholder.png" alt="Team Member 1">
+      <h3>Team Member</h3>
+      <p>Title / Qualification</p>
+    </div>
+    <div class="team-card">
+      <img src="images/placeholder.png" alt="Team Member 2">
+      <h3>Team Member</h3>
+      <p>Title / Qualification</p>
+    </div>
+    <div class="team-card">
+      <img src="images/placeholder.png" alt="Team Member 3">
+      <h3>Team Member</h3>
+      <p>Title / Qualification</p>
+    </div>
+  </div>
+
+  <a href="team.html" class="btn">View Full Team</a>
+</section>
+
+<!-- Styles for preview section -->
+<style>
+.team-preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.team-preview .team-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 15px;
+  width: 200px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.team-preview .team-card:hover {
+  transform: translateY(-10px);
+}
+.team-preview .team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  background-color: #ccc;
+}
+.team-preview .team-card h3 {
+  margin: 8px 0 5px 0;
+  font-size: 1rem;
+}
+.team-preview .team-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+}
+</style>
+
+
+<!-- Responsive Team Preview Section -->
+<section class="section">
+  <h2>Meet Our Team</h2>
+  <p>Discover the people driving freedom, sustainability & innovation at GROW4LIBERTY.</p>
+
+  <div class="team-preview">
+    <!-- Placeholder cards -->
+    <div class="team-card">
+      <img src="images/placeholder.png" alt="Team Member 1">
+      <h3>Team Member</h3>
+      <p>Title / Qualification</p>
+    </div>
+    <div class="team-card">
+      <img src="images/placeholder.png" alt="Team Member 2">
+      <h3>Team Member</h3>
+      <p>Title / Qualification</p>
+    </div>
+    <div class="team-card">
+      <img src="images/placeholder.png" alt="Team Member 3">
+      <h3>Team Member</h3>
+      <p>Title / Qualification</p>
+    </div>
+  </div>
+
+  <a href="team.html" class="btn">View Full Team</a>
+</section>
+
+<style>
+/* Responsive Team Preview Styles */
+.team-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.team-preview .team-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-preview .team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-preview .team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  background-color: #ccc; /* placeholder */
+}
+
+.team-preview .team-card h3 {
+  margin: 8px 0 5px 0;
+  font-size: 1rem;
+}
+
+.team-preview .team-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 768px) {
+  .team-preview {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .team-preview .team-card img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-preview {
+    grid-template-columns: 1fr;
+  }
+  .team-preview .team-card img {
+    width: 100px;
+    height: 100px;
+  }
+}
+</style>
+
+
+<!-- Responsive Team Preview Section -->
+<section class="section">
+  <h2>Meet Our Team</h2>
+  <p>Discover the people driving freedom, sustainability & innovation at GROW4LIBERTY.</p>
+
+  <div class="team-preview">
+    <!-- Placeholder cards -->
+    <div class="team-card">
+      <img src="images/placeholder.png" alt="Team Member 1">
+      <h3>Team Member</h3>
+      <p>Title / Qualification</p>
+    </div>
+    <div class="team-card">
+      <img src="images/placeholder.png" alt="Team Member 2">
+      <h3>Team Member</h3>
+      <p>Title / Qualification</p>
+    </div>
+    <div class="team-card">
+      <img src="images/placeholder.png" alt="Team Member 3">
+      <h3>Team Member</h3>
+      <p>Title / Qualification</p>
+    </div>
+  </div>
+
+  <a href="team.html" class="btn">View Full Team</a>
+</section>
+
