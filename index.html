@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,59 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
-body {
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  background-color: #fff;
-  color: #333;
-}
-
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo-title {
-  display: flex;
-  align-items: center;
-}
-.logo-title img.logo {
-  height: 60px;
-  margin-right: 10px;
-}
-.logo-title h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-.grow { color: #2e7d32; }
-.four { color: #fbc02d; }
-.liberty { color: #388e3c; }
-
-#navbar a {
-  margin: 0 10px;
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-#navbar a:hover {
-  color: #2e7d32;
-}
-#menu-toggle {
-  display: none;
-}
-
-/* HERO SECTION */
+/* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
@@ -102,174 +53,79 @@ header {
   border-radius: 5px;
   z-index: 1;
 }
-
-/* PILLARS SECTION */
-.pillars-section {
-  padding: 60px 20px;
-  background-color: #f9fff9;
-  text-align: center;
+.logo-title {
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
-.pillars-section h2 {
-  color: #2e7d32;
-  margin-bottom: 40px;
-  font-size: 2rem;
-  font-weight: 700;
-}
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  justify-items: center;
-}
-.pillar-card {
-  background: rgba(255,255,255,0.8);
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.pillar-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-}
-.pillar-icon {
-  font-size: 2rem;
-  color: #4CAF50;
-  margin-bottom: 15px;
-}
-.pillar-card h3 {
-  font-weight: 700;
-  color: #333;
-}
-.pillar-card p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* SECTIONS */
-.section {
-  padding: 60px 20px;
-  text-align: center;
-}
-.section h2 {
-  color: #2e7d32;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-.section p {
-  max-width: 800px;
-  margin: 0 auto 20px;
-  line-height: 1.6;
-}
-.btn {
-  display: inline-block;
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-.btn:hover {
-  background-color: #388e3c;
-}
-.cta {
-  background-color: #f1f8e9;
-  padding: 80px 20px;
-}
-
-/* FOOTER */
-.footer {
-  background-color: #fdfdfd;
-  color: #333;
-  text-align: center;
-  padding: 40px 20px;
-  border-top: 2px solid #e0e0e0;
-}
-.social-links {
-  margin-bottom: 20px;
-}
-.social-links a {
-  color: #4CAF50;
-  font-size: 1.5rem;
-  margin: 0 10px;
-  transition: color 0.3s, transform 0.3s;
-}
-.social-links a:hover {
-  color: #2e7d32;
-  transform: scale(1.2);
-}
-.footer a {
-  color: #2e7d32;
-  text-decoration: none;
-}
-.footer a:hover {
-  text-decoration: underline;
+.logo-title img.logo {
+  height: 60px;
+  margin-right: 15px;
 }
 
 /* Pillars Section */
 .pillars-section {
-  padding: 60px 20px;
-  text-align: center;
-  background-color: #f9f9f9;
+padding: 60px 20px;
+text-align: center;
+background-color: #f9f9f9;
 }
 .pillars-section h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #2e7d32;
-  font-weight: 700;
+font-size: 2rem;
+margin-bottom: 40px;
+color: #2e7d32;
+font-weight: 700;
 }
 .pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+max-width: 1100px;
+margin: 0 auto;
 }
 .pillar-card {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 30px 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+background: #ffffff;
+border-radius: 15px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+padding: 30px 20px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .pillar-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+transform: translateY(-5px);
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 .pillar-icon {
-  font-size: 2rem;
-  color: #4CAF50;
-  margin-bottom: 15px;
+font-size: 2rem;
+color: #4CAF50;
+margin-bottom: 15px;
 }
 .pillar-card h3 {
-  color: #2e7d32;
-  font-weight: bold;
-  margin-bottom: 10px;
+color: #2e7d32;
+font-weight: bold;
+margin-bottom: 10px;
 }
 .pillar-card p {
-  color: #333;
-  font-size: 0.95rem;
+color: #333;
+font-size: 0.95rem;
 }
 
 /* Footer socials fix */
 .footer .social-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 15px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 15px;
+margin-bottom: 15px;
 }
 .footer .social-links a {
-  color: #444;
-  font-size: 1.4rem;
-  transition: color 0.3s;
+color: #444;
+font-size: 1.4rem;
+transition: color 0.3s;
 }
 .footer .social-links a:hover {
-  color: #4CAF50;
-}
-</style>
-</head>
+color: #4CAF50;
+} </style>
 
+</head>
 <body>
 <header>
   <div class="logo-title">
@@ -281,13 +137,13 @@ header {
     <a href="about.html">About</a>
     <a href="programs.html">Programs</a>
     <a href="get-involved.html">Get Involved</a>
+    <a href="team.html">Teams</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
   </nav>
   <button id="menu-toggle">☰</button>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-slide" style="background-image: url('images/slide1.jpg');"></div>
   <div class="hero-slide" style="background-image: url('images/slide2.jpg');"></div>
@@ -299,47 +155,22 @@ header {
   <a href="programs.html" class="btn">Explore Our Programs</a>
 </section>
 
-<!-- MISSION -->
 <section class="section">
   <h2>Our Mission</h2>
   <p>GROW4LIBERTY (G4L) is a non-profit organization dedicated to training individuals and communities in sustainable urban farming, entrepreneurial skills, agricultural value addition, and promoting inclusive, liberty-driven development across Africa and beyond.</p>
   <a href="get-involved.html" class="btn">Join the Movement</a>
 </section>
 
-<<<<<<< HEAD
-<!-- PILLARS -->
-=======
-<!-- ✅ New Pillars Section -->
->>>>>>> 8d7ba81 (Add Core Pillars section, responsive layout, light footer, and UI refinements)
 <section class="pillars-section">
   <h2>Core Pillars of Grow4Liberty</h2>
   <div class="pillars-grid">
     <div class="pillar-card">
-<<<<<<< HEAD
-      <div class="pillar-icon"><i class="fas fa-hand-holding-heart"></i></div>
-      <h3>Liberty</h3>
-      <p>Promoting self-reliance and individual freedom through access to practical agricultural and digital skills.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-icon"><i class="fas fa-users"></i></div>
-      <h3>Inclusivity</h3>
-      <p>Creating opportunities for all, including women and persons with disabilities, to thrive in agriculture and technology.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-icon"><i class="fas fa-lightbulb"></i></div>
-      <h3>Entrepreneurship</h3>
-      <p>Encouraging innovation and enterprise through urban farming startups and tech-driven agribusiness models.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-icon"><i class="fas fa-leaf"></i></div>
-=======
       <div class="pillar-icon">
         <i class="fas fa-hand-holding-heart"></i>
       </div>
       <h3>Liberty</h3>
       <p>Promoting self-reliance and individual freedom through access to practical agricultural and digital skills.</p>
     </div>
-
     <div class="pillar-card">
       <div class="pillar-icon">
         <i class="fas fa-users"></i>
@@ -347,7 +178,6 @@ header {
       <h3>Inclusivity</h3>
       <p>Creating opportunities for all, including women and persons with disabilities, to thrive in agriculture and technology.</p>
     </div>
-
     <div class="pillar-card">
       <div class="pillar-icon">
         <i class="fas fa-lightbulb"></i>
@@ -355,28 +185,21 @@ header {
       <h3>Entrepreneurship</h3>
       <p>Encouraging innovation and enterprise through urban farming startups and tech-driven agribusiness models.</p>
     </div>
-
     <div class="pillar-card">
       <div class="pillar-icon">
         <i class="fas fa-leaf"></i>
       </div>
->>>>>>> 8d7ba81 (Add Core Pillars section, responsive layout, light footer, and UI refinements)
       <h3>Sustainability</h3>
       <p>Advancing climate-smart farming and digital solutions that foster long-term environmental and economic resilience.</p>
     </div>
   </div>
 </section>
 
-<<<<<<< HEAD
-<!-- CTA -->
-=======
->>>>>>> 8d7ba81 (Add Core Pillars section, responsive layout, light footer, and UI refinements)
 <section class="section cta">
   <h2>Be part of a growing community working towards freedom, sustainability, and innovation.</h2>
   <a href="get-involved.html" class="btn">Get Involved</a>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="social-links">
     <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -407,5 +230,6 @@ setInterval(nextSlide, 5000);
 </script>
 
 <script src="js/script.js"></script>
+
 </body>
 </html>
