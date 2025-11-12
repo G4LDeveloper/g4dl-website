@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog – GROW4LIBERTY</title>
+<title>News & Newsletter – GROW4LIBERTY</title>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header>
   <div class="logo-title">
-    <img src="images/logo.png" alt="GROW4LIBERTY logo" class="logo">
-    <h1>GROW4LIBERTY</h1>
+    <img src="images/ourlogo.png" alt="GROW4LIBERTY logo" class="logo">
+    <h1><span class="grow">GROW</span><span class="four">4</span><span class="liberty">LIBERTY</span></h1>
   </div>
   <nav id="navbar">
     <a href="index.html">Home</a>
@@ -24,12 +25,200 @@
 </header>
 
 <section class="section">
-  <h2>Blog & News</h2>
-  <p>Coming soon: articles, success stories, and updates on sustainable farming and entrepreneurship initiatives.</p>
+  <h2>News & Newsletters</h2>
+  <p>Stay updated with the latest stories, insights, and monthly newsletters on sustainable farming, digital innovation, and youth empowerment.</p>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+    <div class="newsletter-content">
+      <i class="fas fa-envelope-open-text newsletter-icon"></i>
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest updates on sustainable farming, digital literacy programs, success stories, and upcoming events delivered straight to your inbox every month!</p>
+    </div>
+    
+    <div class="newsletter-form">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-field">
+            <i class="fas fa-user"></i>
+            <input type="text" name="name" placeholder="Your Name" required>
+          </div>
+          
+          <div class="form-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Your Email" required>
+          </div>
+        </div>
+        
+        <div class="form-field-checkbox">
+          <input type="checkbox" id="updates" name="updates" value="yes" checked>
+          <label for="updates">I want to receive monthly newsletters and updates</label>
+        </div>
+        
+        <button type="submit" class="btn newsletter-btn">
+          <i class="fas fa-paper-plane"></i> Subscribe Now
+        </button>
+        
+        <p class="privacy-note">
+          <i class="fas fa-lock"></i> We respect your privacy. Unsubscribe at any time.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Archive -->
+<section class="section" style="background: var(--light-bg);">
+  <h2><i class="fas fa-book-open"></i> Newsletter Archive</h2>
+  <p class="archive-subtitle">Browse our monthly newsletters and stay informed about our impact</p>
+  
+  <div class="newsletter-archive-grid">
+    
+    <!-- October 2025 Newsletter -->
+    <div class="newsletter-item">
+      <div class="newsletter-cover">
+        <img src="images/newsletter-october-2025.jpg" alt="October 2025 Newsletter Cover">
+        <div class="newsletter-badge">
+          <i class="fas fa-file-pdf"></i> PDF
+        </div>
+      </div>
+      <div class="newsletter-info">
+        <span class="newsletter-date"><i class="far fa-calendar"></i> October 2025</span>
+        <h3>Grow4Liberty October 2025 Newsletter</h3>
+        <p>Cultivating Change — Empowering Youth, Building Sustainable Communities. Featuring Truth FM interview, Goldenlife Victors training, team spotlights, and more.</p>
+        <div class="newsletter-actions">
+          <a href="newsletter/october-2025.pdf" class="btn-outline" target="_blank">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+          <a href="#october-stories" class="btn-text">
+            <i class="fas fa-newspaper"></i> Read Stories
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder for Future Newsletters -->
+    <div class="newsletter-item coming-soon">
+      <div class="newsletter-cover">
+        <div class="newsletter-placeholder">
+          <i class="fas fa-calendar-plus"></i>
+          <p>Coming Soon</p>
+        </div>
+      </div>
+      <div class="newsletter-info">
+        <span class="newsletter-date"><i class="far fa-calendar"></i> November 2025</span>
+        <h3>Grow4Liberty November 2025 Newsletter</h3>
+        <p>Subscribe to be the first to receive our November edition featuring updates on our Urban Farming Fellowship and Model Demonstration Site.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Featured Stories from Latest Newsletter -->
+<section class="section" id="october-stories">
+  <h2><i class="fas fa-star"></i> Featured Stories - October 2025</h2>
+  <div class="blog-grid">
+    
+    <!-- Article 1: Truth FM Feature -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src="images/truth-fm.jpg" alt="Truth FM Interview">
+      </div>
+      <div class="blog-content">
+        <span class="blog-date"><i class="far fa-calendar"></i> October 9, 2025</span>
+        <h3>Building Sustainable Urban Communities through Urban Farming</h3>
+        <p>Our Team Lead Tom Okech and Implementation Lead Kepha Rabon were featured on Truth FM discussing inclusive agricultural policies, youth empowerment, and the role of urban farming in economic self-reliance.</p>
+        <div class="blog-tags">
+          <span class="tag"><i class="fas fa-tag"></i> Media</span>
+          <span class="tag"><i class="fas fa-tag"></i> Urban Farming</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 2: Goldenlife Training -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src="images/goldenlife-training.jpg" alt="Goldenlife Victors Training">
+      </div>
+      <div class="blog-content">
+        <span class="blog-date"><i class="far fa-calendar"></i> November 1, 2025</span>
+        <h3>Transformative Training at Goldenlife Victors, Naivasha</h3>
+        <p>We conducted hands-on training for rehabilitated youth covering Black Soldier Fly farming, urban gardening, sustainable pest management, and mushroom farming.</p>
+        <div class="blog-tags">
+          <span class="tag"><i class="fas fa-tag"></i> Training</span>
+          <span class="tag"><i class="fas fa-tag"></i> Youth Empowerment</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 3: Susan Kageni Profile -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src="images/susan-kageni.jpg" alt="Susan Kageni">
+      </div>
+      <div class="blog-content">
+        <span class="blog-date"><i class="far fa-calendar"></i> October 2025</span>
+        <h3>Inspiring the Next Generation: The Story of Susan Kageni</h3>
+        <p>Meet Susan Kageni, MSc in Agricultural Information and Communication Management, Chairperson of Young Farmers Clubs of Kenya, and author.</p>
+        <div class="blog-tags">
+          <span class="tag"><i class="fas fa-tag"></i> Team Spotlight</span>
+          <span class="tag"><i class="fas fa-tag"></i> Innovation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 4: Caren's Reflection -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src="images/caren-chebichii.jpg" alt="Caren Chebichii">
+      </div>
+      <div class="blog-content">
+        <span class="blog-date"><i class="far fa-calendar"></i> October 2025</span>
+        <h3>Empowering Communities Through Modern Urban Agriculture</h3>
+        <p>Trainer Caren Chebichii shares reflections on teaching farmers to transform limited spaces into productive farms using recycled materials.</p>
+        <div class="blog-tags">
+          <span class="tag"><i class="fas fa-tag"></i> Urban Farming</span>
+          <span class="tag"><i class="fas fa-tag"></i> Sustainability</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section cta">
+  <h2>Want to Be Part of Our Story?</h2>
+  <p>Join Grow4Liberty as we continue to empower youth and build sustainable communities through agriculture and digital innovation.</p>
+  <a href="get-involved.html" class="btn">Get Involved Today</a>
 </section>
 
 <footer class="footer">
-  <p>&copy; 2025 GROW4LIBERTY</p>
+  <div class="social-links">
+    <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank">
+      <i class="fab fa-facebook"></i> Facebook
+    </a>
+    <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://x.com/Grow4Liberty" target="_blank">
+      <i class="fab fa-x-twitter"></i> X
+    </a>
+    <a href="https://www.instagram.com/grow4liberty" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="https://www.tiktok.com/@grow4liberty" target="_blank">
+      <i class="fab fa-tiktok"></i> TikTok
+    </a>
+  </div>
+  <p><strong>Email:</strong> <a href="mailto:info.growforliberty@gmail.com"><i class="fas fa-envelope"></i> info.growforliberty@gmail.com</a></p>
+  <p>&copy; 2025 GROW4LIBERTY. Empowering Youth through Sustainable Farming and Digital Innovation.</p>
 </footer>
 
 <script src="js/script.js"></script>
