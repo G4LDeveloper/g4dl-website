@@ -1,3 +1,4 @@
+cat >> blog.html <<'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
     <a href="about.html">About</a>
     <a href="programs.html">Programs</a>
     <a href="get-involved.html">Get Involved</a>
-    <a href="blog.html">Blog</a>
+    <a href="blog.html" class="active">Blog</a>
     <a href="contact.html">Contact</a>
   </nav>
   <button id="menu-toggle">☰</button>
@@ -29,57 +30,17 @@
   <p>Stay updated with the latest stories, insights, and monthly newsletters on sustainable farming, digital innovation, and youth empowerment.</p>
 </section>
 
-<!-- Newsletter Section -->
-<section class="newsletter-section">
-  <div class="newsletter-container">
-    <div class="newsletter-content">
-      <i class="fas fa-envelope-open-text newsletter-icon"></i>
-      <h2>Subscribe to Our Newsletter</h2>
-      <p>Get the latest updates on sustainable farming, digital literacy programs, success stories, and upcoming events delivered straight to your inbox every month!</p>
-    </div>
-    
-    <div class="newsletter-form">
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-row">
-          <div class="form-field">
-            <i class="fas fa-user"></i>
-            <input type="text" name="name" placeholder="Your Name" required>
-          </div>
-          
-          <div class="form-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" name="email" placeholder="Your Email" required>
-          </div>
-        </div>
-        
-        <div class="form-field-checkbox">
-          <input type="checkbox" id="updates" name="updates" value="yes" checked>
-          <label for="updates">I want to receive monthly newsletters and updates</label>
-        </div>
-        
-        <button type="submit" class="btn newsletter-btn">
-          <i class="fas fa-paper-plane"></i> Subscribe Now
-        </button>
-        
-        <p class="privacy-note">
-          <i class="fas fa-lock"></i> We respect your privacy. Unsubscribe at any time.
-        </p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- Newsletter Archive -->
+<!-- Newsletter Archive (Only One Card for Latest Newsletter) -->
 <section class="section" style="background: var(--light-bg);">
-  <h2><i class="fas fa-book-open"></i> Newsletter Archive</h2>
-  <p class="archive-subtitle">Browse our monthly newsletters and stay informed about our impact</p>
+  <h2><i class="fas fa-book-open"></i> Latest Newsletter</h2>
+  <p class="archive-subtitle">Read or download our most recent newsletter edition</p>
   
   <div class="newsletter-archive-grid">
-    
-    <!-- October 2025 Newsletter -->
+
+    <!-- Latest Newsletter Card (October 2025) -->
     <div class="newsletter-item">
       <div class="newsletter-cover">
-        <img src="images/newsletter-october-2025.jpg" alt="October 2025 Newsletter Cover">
+        <img src="images/newsletter-Oct.png" alt="October 2025 Newsletter Cover">
         <div class="newsletter-badge">
           <i class="fas fa-file-pdf"></i> PDF
         </div>
@@ -96,21 +57,6 @@
             <i class="fas fa-newspaper"></i> Read Stories
           </a>
         </div>
-      </div>
-    </div>
-
-    <!-- Placeholder for Future Newsletters -->
-    <div class="newsletter-item coming-soon">
-      <div class="newsletter-cover">
-        <div class="newsletter-placeholder">
-          <i class="fas fa-calendar-plus"></i>
-          <p>Coming Soon</p>
-        </div>
-      </div>
-      <div class="newsletter-info">
-        <span class="newsletter-date"><i class="far fa-calendar"></i> November 2025</span>
-        <h3>Grow4Liberty November 2025 Newsletter</h3>
-        <p>Subscribe to be the first to receive our November edition featuring updates on our Urban Farming Fellowship and Model Demonstration Site.</p>
       </div>
     </div>
 
@@ -189,6 +135,46 @@
   </div>
 </section>
 
+<!-- Newsletter Subscription Section (Below Featured Stories) -->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+    <div class="newsletter-content">
+      <i class="fas fa-envelope-open-text newsletter-icon"></i>
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest updates on sustainable farming, digital literacy programs, success stories, and upcoming events delivered straight to your inbox every month!</p>
+    </div>
+    
+    <div class="newsletter-form">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-field">
+            <i class="fas fa-user"></i>
+            <input type="text" name="name" placeholder="Your Name" required>
+          </div>
+          
+          <div class="form-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Your Email" required>
+          </div>
+        </div>
+        
+        <div class="form-field-checkbox">
+          <input type="checkbox" id="updates" name="updates" value="yes" checked>
+          <label for="updates">I want to receive monthly newsletters and updates</label>
+        </div>
+        
+        <button type="submit" class="btn newsletter-btn">
+          <i class="fas fa-paper-plane"></i> Subscribe Now
+        </button>
+        
+        <p class="privacy-note">
+          <i class="fas fa-lock"></i> We respect your privacy. Unsubscribe at any time.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- Call to Action -->
 <section class="section cta">
   <h2>Want to Be Part of Our Story?</h2>
@@ -199,22 +185,22 @@
 <footer class="footer">
   <div class="social-links">
     <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank">
-      <i class="fab fa-facebook"></i> Facebook
+      <i class="fab fa-facebook"></i><span>Facebook</span>
     </a>
     <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank">
-      <i class="fab fa-linkedin"></i> LinkedIn
+      <i class="fab fa-linkedin"></i><span>LinkedIn</span>
     </a>
     <a href="https://x.com/Grow4Liberty" target="_blank">
-      <i class="fab fa-x-twitter"></i> X
+      <i class="fab fa-x-twitter"></i><span>X</span>
     </a>
     <a href="https://www.instagram.com/grow4liberty" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
+      <i class="fab fa-instagram"></i><span>Instagram</span>
     </a>
     <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank">
-      <i class="fab fa-whatsapp"></i> WhatsApp
+      <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
     </a>
     <a href="https://www.tiktok.com/@grow4liberty" target="_blank">
-      <i class="fab fa-tiktok"></i> TikTok
+      <i class="fab fa-tiktok"></i><span>TikTok</span>
     </a>
   </div>
   <p><strong>Email:</strong> <a href="mailto:info.growforliberty@gmail.com"><i class="fas fa-envelope"></i> info.growforliberty@gmail.com</a></p>
@@ -224,3 +210,4 @@
 <script src="js/script.js"></script>
 </body>
 </html>
+EOF

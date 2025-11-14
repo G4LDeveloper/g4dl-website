@@ -4,16 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GROW4LIBERTY – Cultivating Freedom, Innovation & Sustainable Growth</title>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+/* Font Updates */
+body {
+  font-family: 'Inter', Tahoma, Verdana, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', Tahoma, Verdana, sans-serif;
+  font-weight: 700;
+}
+
+/* Hero Section */
 body, html {
   margin: 0;
   padding: 0;
 }
-
-/* Hero section */
 .hero {
   position: relative;
   height: 100vh;
@@ -25,8 +33,6 @@ body, html {
   align-items: center;
   overflow: hidden;
 }
-
-/* Slideshow backgrounds */
 .hero-slide {
   position: absolute;
   top: 0;
@@ -40,8 +46,6 @@ body, html {
   transition: opacity 1.5s ease-in-out;
   z-index: 1;
 }
-
-/* Dark overlay */
 .hero-overlay {
   position: absolute;
   top:0;
@@ -51,8 +55,6 @@ body, html {
   background-color: rgba(1, 15, 3, 0.5);
   z-index: 2;
 }
-
-/* Hero text */
 .hero-text {
   position: relative;
   z-index: 3;
@@ -121,7 +123,6 @@ body, html {
   background-color: #3b06eb;
 }
 
-
 /* Pillars Section */
 .pillars-section {
 padding: 60px 20px;
@@ -166,6 +167,17 @@ margin-bottom: 10px;
 color: #333;
 font-size: 0.95rem;
 }
+
+/* Footer Socials */
+.footer .social-links a {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  color: inherit;
+  text-decoration: none;
+}
+.footer .social-links a span {
+  display: none; /* Hide names, show only icons */
+}
 </style>
 </head>
 <body>
@@ -181,32 +193,29 @@ font-size: 0.95rem;
     <a href="get-involved.html">Get Involved</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
+    <a href="community.html">Community</a>
+
   </nav>
   <button id="menu-toggle">☰</button>
 </header>
 
 <section class="hero">
-  <!-- Slides -->
   <div class="hero-slide" style="background-image: url('images/slide1.jpg');"></div>
   <div class="hero-slide" style="background-image: url('images/slide2.jpg');"></div>
   <div class="hero-slide" style="background-image: url('images/slide3.jpg');"></div>
   <div class="hero-slide" style="background-image: url('images/slide4.jpg');"></div>
 
-  <!-- Overlay -->
   <div class="hero-overlay"></div>
 
-  <!-- Hero Text -->
   <div class="hero-text">
     <h2>Cultivating Freedom, Innovation & Sustainable Growth</h2>
     <p>Empowering communities through sustainable farming, entrepreneurship, and liberty.</p>
     <a href="programs.html" class="btn">Explore Our Programs</a>
   </div>
 
-  <!-- Arrows -->
   <div class="arrow arrow-left">&#10094;</div>
   <div class="arrow arrow-right">&#10095;</div>
 
-  <!-- Dots -->
   <div class="dots">
     <div class="dot" onclick="currentSlide(0)"></div>
     <div class="dot" onclick="currentSlide(1)"></div>
@@ -217,7 +226,9 @@ font-size: 0.95rem;
 
 <section class="section">
   <h2>Our Mission</h2>
-  <p>GROW4LIBERTY (G4L) is a non-profit organization dedicated to training individuals and communities in sustainable urban farming, entrepreneurial skills, agricultural value addition, and promoting inclusive, liberty-driven development across Africa and beyond.</p>
+  <p>To empower young people and communities with the knowledge, skills, and resources to create sustainable livelihoods through urban farming and digital literacy, promoting self-reliance, environmental stewardship, and innovation-driven growth.</p>
+  <h2>Our Vision</h2>
+  <p>A world where every young person harnesses the power of agriculture and technology to build self-sufficient, resilient, and sustainable communities.</p>
   <a href="get-involved.html" class="btn">Join the Movement</a>
 </section>
 
@@ -260,8 +271,6 @@ font-size: 0.95rem;
   <a href="get-involved.html" class="btn">Get Involved</a>
 </section>
 
-
-
 <footer class="footer">
   <div class="social-links">
     <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -303,7 +312,6 @@ function currentSlide(index) {
 showSlide(current);
 let slideInterval = setInterval(nextSlide, 5000);
 
-// Arrow click events
 document.querySelector('.arrow-left').addEventListener('click', () => {
   prevSlide();
   resetInterval();
@@ -322,5 +330,4 @@ function resetInterval() {
 <script src="js/script.js"></script>
 </body>
 </html>
-
 

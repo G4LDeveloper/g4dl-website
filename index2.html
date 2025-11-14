@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GROW4LIBERTY – Cultivating Freedom, Innovation & Sustainable Growth</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 35px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+/* Story Section */
+.story-section {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.story-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.story-section h2 {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 30px;
+  font-weight: 900;
+}
+
+.story-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Focus Areas */
+.focus-section {
+  padding: 80px 20px;
+  background: #f5f5f5;
+}
+
+.focus-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.focus-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 60px;
+  font-weight: 900;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.focus-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.focus-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.focus-icon {
+  font-size: 3rem;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.focus-card h3 {
+  font-size: 1.5rem;
+  color: #2e7d32;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.focus-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #2e7d32 0%, #4CAF50 100%);
+  color: white;
+  text-align: center;
+}
+
+.stats-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.stats-section p {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  opacity: 0.9;
+}
+
+.stats-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.stat-item h3 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.gallery-section .subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  height: 300px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Vision Section */
+.vision-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+.vision-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.vision-image {
+  width: 100%;
+  height: 450px;
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+.vision-content h2 {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 25px;
+  font-weight: 900;
+}
+
+.vision-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #66bb6a 0%, #4CAF50 100%);
+  text-align: center;
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.cta-section .btn {
+  background: white;
+  color: #4CAF50;
+}
+
+.cta-section .btn:hover {
+  background: #f5f5f5;
+  color: #2e7d32;
+}
+
+/* Blog Section */
+.blog-section {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.blog-section .subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.blog-image {
+  width: 100%;
+  height: 220px;
+  background: #e0e0e0;
+}
+
+.blog-content {
+  padding: 25px;
+}
+
+.blog-content h3 {
+  font-size: 1.3rem;
+  color: #2e7d32;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.blog-content p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.blog-content a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .vision-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .focus-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo-title">
+      <a href="index.html">
+        <img src="images/logo.png" alt="GROW4LIBERTY logo" class="logo">
+      </a>
+      <h1><a href="index.html" style="text-decoration: none;"><span class="grow">GROW</span><span class="four">4</span><span class="liberty">LIBERTY</span></a></h1>
+    </div>
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      
+      <div class="dropdown">
+        <a>Who We Are <i class="fas fa-chevron-down dropdown-icon"></i></a>
+        <div class="dropdown-content">
+          <a href="about.html">About Us</a>
+          <a href="mission.html">Our Mission</a>
+          <a href="vision.html">Our Vision</a>
+          <a href="team.html">Our Team</a>
+          <a href="partners.html">Partners</a>
+        </div>
+      </div>
+      
+      <div class="dropdown">
+        <a>What We Do <i class="fas fa-chevron-down dropdown-icon"></i></a>
+        <div class="dropdown-content">
+          <a href="programs.html">Our Programs</a>
+          <a href="training.html">Training & Workshops</a>
+          <a href="projects.html">Current Projects</a>
+          <a href="impact.html">Our Impact</a>
+        </div>
+      </div>
+      
+      <div class="dropdown">
+        <a>Training & Skills <i class="fas fa-chevron-down dropdown-icon"></i></a>
+        <div class="dropdown-content">
+          <a href="training-ai.html">AI Literacy</a>
+          <a href="training-agribusiness.html">Agribusiness</a>
+          <a href="training-urban-farming.html">Urban Farming</a>
+          <a href="training-digital.html">Digital Skills</a>
+          <a href="training-entrepreneurship.html">Entrepreneurship</a>
+          <a href="training-value-addition.html">Value Addition</a>
+        </div>
+      </div>
+      
+      <div class="dropdown">
+        <a>Media <i class="fas fa-chevron-down dropdown-icon"></i></a>
+        <div class="dropdown-content">
+          <a href="blog.html">Blog</a>
+          <a href="news.html">News & Updates</a>
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="videos.html">Videos</a>
+          <a href="publications.html">Publications</a>
+        </div>
+      </div>
+      
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="menu-toggle">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-slide active" style="background-image: url('images/slide1.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('images/slide2.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('images/slide3.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('images/slide4.jpg');"></div>
+  
+  <div class="hero-content">
+    <p class="hero-subtitle">Welcome to GROW4LIBERTY!</p>
+    <h2>Cultivating Freedom, Innovation & Sustainable Growth</h2>
+    <p>Empowering communities through sustainable farming, entrepreneurship, and liberty.</p>
+    <a href="programs.html" class="btn">Explore Our Programs</a>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="story-container">
+    <h2>Our Story</h2>
+    <p>GROW4LIBERTY (G4L) is a non-profit organization dedicated to training individuals and communities in sustainable urban farming, entrepreneurial skills, agricultural value addition, and promoting inclusive, liberty-driven development across Africa and beyond.</p>
+    <p>We believe that by integrating sustainable solutions, community engagement, and empowering individuals with practical skills, we can build a future that is resilient, inclusive, and economically vibrant.</p>
+  </div>
+</section>
+
+<section class="focus-section">
+  <div class="focus-container">
+    <h2>Our Key Focus Areas</h2>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-icon">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <h3>Liberty</h3>
+        <p>We are committed to promoting self-reliance and individual freedom through access to practical agricultural and digital skills that empower communities.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Inclusivity</h3>
+        <p>Creating opportunities for all, including women and persons with disabilities, to thrive in agriculture and technology while building sustainable futures.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Entrepreneurship</h3>
+        <p>We believe that innovation and enterprise drive real change. We encourage urban farming startups and tech-driven agribusiness models.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3>Sustainability</h3>
+        <p>Advancing climate-smart farming and digital solutions that foster long-term environmental and economic resilience for future generations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <h2>We Take Action. To Make Better Changes</h2>
+  <p>Our impact speaks for itself. Join us in creating lasting change.</p>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <h3>500+</h3>
+      <p>People Trained</p>
+    </div>
+    <div class="stat-item">
+      <h3>50+</h3>
+      <p>Communities Reached</p>
+    </div>
+    <div class="stat-item">
+      <h3>100+</h3>
+      <p>Active Volunteers</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="gallery-container">
+    <h2>GROW4LIBERTY in Action</h2>
+    <p class="subtitle">From urban farms to tech-driven solutions, we're on a mission to revolutionize agriculture and empower communities across Africa.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+    </div>
+  </div>
+</section>
+
+<section class="vision-section">
+  <div class="vision-container">
+    <div class="vision-image"></div>
+    <div class="vision-content">
+      <h2>A Vision Rooted in Impact</h2>
+      <p>At GROW4LIBERTY, we envision a future where communities thrive through sustainable agriculture, where entrepreneurs build innovative businesses, and where individuals have the freedom and skills to create their own prosperity.</p>
+      <p>Our approach is rooted in action, education, and collaboration, ensuring that every person we reach becomes an agent of positive change in their community.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Become Our Volunteer</h2>
+  <p style="font-size: 1.2rem; margin-bottom: 35px;">Are you passionate about sustainable agriculture, innovation, and making a real impact? Join GROW4LIBERTY and be part of a movement transforming lives!</p>
+  <a href="get-involved.html" class="btn">Get Involved Today</a>
+</section>
+
+<section class="blog-section">
+  <div class="blog-container">
+    <h2>News & Updates</h2>
+    <p class="subtitle">Stay tuned for exclusive updates on our programs, events, and success stories from the field!</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-image"></div>
+        <div class="blog-content">
+          <h3>Empowering Youth Through Urban Farming</h3>
+          <p>Discover how our latest training program is helping young entrepreneurs start their own sustainable farming businesses in urban areas.</p>
+          <a href="blog.html">Read More »</a>
+        </div>
+      </div>
+      
+      <div class="blog-card">
+        <div class="blog-image"></div>
+        <div class="blog-content">
+          <h3>Technology Meets Agriculture</h3>
+          <p>Learn about the innovative digital tools we're introducing to help farmers increase productivity and reach new markets.</p>
+          <a href="blog.html">Read More »</a>
+        </div>
+      </div>
+      
+      <div class="blog-card">
+        <div class="blog-image"></div>
+        <div class="blog-content">
+          <h3>Building Inclusive Communities</h3>
+          <p>Read inspiring stories of how we're creating opportunities for women and persons with disabilities in agriculture.</p>
+          <a href="blog.html">Read More »</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="social-links">
+    <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://x.com/Grow4Liberty" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com/grow4liberty" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.tiktok.com/@grow4liberty" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div>
+  <p><strong>Email:</strong> <a href="mailto:info.growforliberty@gmail.com"><i class="fas fa-envelope"></i> info.growforliberty@gmail.com</a></p>
+  <p>&copy; 2025 GROW4LIBERTY. Cultivating Freedom, Innovation & Sustainable Growth.</p>
+</footer>
+
+<script>
+// Hero Slideshow
+let slides = document.querySelectorAll('.hero-slide');
+let current = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    if (i === index) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+showSlide(current);
+setInterval(nextSlide, 5000);
+</script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+

@@ -6,6 +6,70 @@
 <title>Programs – GROW4LIBERTY</title>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* Hero section background */
+.hero {
+  background-image: url('images/programs.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px 60px 20px; /* top padding increased to move content below the line */
+  position: relative;
+}
+
+/* Hero overlay if needed */
+.hero::before {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* Hero text */
+.hero h2, .hero p {
+  position: relative;
+  z-index: 2;
+}
+
+/* Program cards adjustments */
+.program-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 10px;
+}
+
+.program-card {
+  /* Removed background:white to inherit original styling */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.program-card img.program-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+</style>
 </head>
 <body>
 <header>
@@ -66,11 +130,13 @@
     <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://x.com/Grow4Liberty" target="_blank"><i class="fab fa-x-twitter"></i></a>
     <a href="https://www.instagram.com/grow4liberty" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://whatsapp.com/channel/0029Vb6K6rI3QxSA2n4g3Z3m" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.tiktok.com/@grow4liberty" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/channel/UCDK6sMJ5MIOHiZu3r1zoFbQ" target="_blank"><i class="fab fa-youtube"></i></a>
   </div>
   <p>&copy; 2025 GROW4LIBERTY</p>
 </footer>
 
 </body>
 </html>
+

@@ -6,11 +6,45 @@
 <title>Community – GROW4LIBERTY</title>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* Community Hero Background */
+.community-hero {
+  position: relative;
+  height: 70vh;
+  background-image: url('images/community.JPG');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.community-hero::before {
+  content: '';
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.5); /* dark overlay */
+  z-index: 1;
+}
+.community-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Social icons only */
+.social-links a span {
+  display: none;
+}
+</style>
 </head>
 <body>
 <header>
   <div class="logo-title">
-    <img src="images/ourlogo.png" alt="GROW4LIBERTY logo" class="logo">
+    <img src="images/logo.png" alt="GROW4LIBERTY logo" class="logo">
     <h1><span class="grow">GROW</span><span class="four">4</span><span class="liberty">LIBERTY</span></h1>
   </div>
   <nav id="navbar">
@@ -39,7 +73,6 @@
   <p class="section-intro">We have made significant strides in empowering youth for sustainable development across Kenya and beyond. We have engaged with diverse communities, facilitated impactful trainings, and fostered a generation of young leaders committed to achieving food security and economic independence.</p>
 
   <div class="program-showcase">
-    
     <!-- Program 1 -->
     <div class="program-item">
       <div class="program-image">
@@ -83,7 +116,6 @@
         <p>Grow4Liberty is committed to creating opportunities for everyone, including women and persons with disabilities. Our programs are designed to be accessible and inclusive, ensuring that all community members can participate, learn, and thrive. We partner with organizations serving marginalized groups to deliver tailored training that promotes dignity, independence, and economic empowerment.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -184,7 +216,6 @@
         <p>We welcome partnerships with educational institutions, NGOs, private companies, and community organizations. Contact us at <a href="mailto:info.growforliberty@gmail.com">info.growforliberty@gmail.com</a> to discuss collaboration opportunities.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -198,24 +229,13 @@
 
 <footer class="footer">
   <div class="social-links">
-    <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank">
-      <i class="fab fa-facebook"></i> Facebook
-    </a>
-    <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-    <a href="https://x.com/Grow4Liberty" target="_blank">
-      <i class="fab fa-x-twitter"></i> X
-    </a>
-    <a href="https://www.instagram.com/grow4liberty" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank">
-      <i class="fab fa-whatsapp"></i> WhatsApp
-    </a>
-    <a href="https://www.tiktok.com/@grow4liberty" target="_blank">
-      <i class="fab fa-tiktok"></i> TikTok
-    </a>
+    <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://x.com/Grow4Liberty" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com/grow4liberty" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://whatsapp.com/channel/0029Vb6K6rI3QxSA2n4g3Z3m" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.tiktok.com/@grow4liberty" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/channel/UCDK6sMJ5MIOHiZu3r1zoFbQ" target="_blank"><i class="fab fa-youtube"></i></a>
   </div>
   <p><strong>Email:</strong> <a href="mailto:info.growforliberty@gmail.com"><i class="fas fa-envelope"></i> info.growforliberty@gmail.com</a></p>
   <p>&copy; 2025 GROW4LIBERTY. Empowering Youth through Sustainable Farming and Digital Innovation.</p>
@@ -243,3 +263,4 @@ document.querySelectorAll('.faq-question').forEach(button => {
 </script>
 </body>
 </html>
+

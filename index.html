@@ -1,27 +1,111 @@
-
+cat > index.html << 'EOF'
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GROW4LIBERTY – Cultivating Freedom, Innovation & Sustainable Growth</title>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-title img.logo {
+  height: 50px;
+}
+
+.logo-title h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.logo-title .grow {
+  color: #2e7d32;
+}
+
+.logo-title .four {
+  color: #4CAF50;
+}
+
+.logo-title .liberty {
+  color: #66bb6a;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: #4CAF50;
+}
+
+#menu-toggle {
+  display: none;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
-  color: white;
-  text-align: center;
+  height: 85vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
   overflow: hidden;
 }
+
 .hero-slide {
   position: absolute;
   top: 0;
@@ -30,118 +114,482 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
-  z-index: -1;
 }
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+
+.hero-slide.active {
+  opacity: 1;
 }
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-}
-.hero .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 5px;
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
   z-index: 1;
 }
-.logo-title {
-  display: flex;
-  align-items: center;
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
   padding: 20px;
 }
-.logo-title img.logo {
-  height: 60px;
-  margin-right: 15px;
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+  line-height: 1.2;
 }
 
-/* Pillars Section */
-.pillars-section {
-padding: 60px 20px;
-text-align: center;
-background-color: #f9f9f9;
-}
-.pillars-section h2 {
-font-size: 2rem;
-margin-bottom: 40px;
-color: #2e7d32;
-font-weight: 700;
-}
-.pillars-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 20px;
-max-width: 1100px;
-margin: 0 auto;
-}
-.pillar-card {
-background: #ffffff;
-border-radius: 15px;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-padding: 30px 20px;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.pillar-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-.pillar-icon {
-font-size: 2rem;
-color: #4CAF50;
-margin-bottom: 15px;
-}
-.pillar-card h3 {
-color: #2e7d32;
-font-weight: bold;
-margin-bottom: 10px;
-}
-.pillar-card p {
-color: #333;
-font-size: 0.95rem;
+.hero-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* Footer socials fix */
-.footer .social-links {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 15px;
-margin-bottom: 15px;
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 35px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
-.footer .social-links a {
-color: #9cc914;
-font-size: 1.4rem;
-transition: color 0.3s;
-}
-.footer .social-links a:hover {
-color: #1ee024;
-} </style>
 
+.btn {
+  display: inline-block;
+  background: #4CAF50;
+  color: white;
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+}
+
+.btn:hover {
+  background: #2e7d32;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Story Section */
+.story-section {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.story-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.story-section h2 {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 30px;
+  font-weight: 900;
+}
+
+.story-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Focus Areas */
+.focus-section {
+  padding: 80px 20px;
+  background: #f5f5f5;
+}
+
+.focus-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.focus-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 60px;
+  font-weight: 900;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.focus-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.focus-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.focus-icon {
+  font-size: 3rem;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.focus-card h3 {
+  font-size: 1.5rem;
+  color: #2e7d32;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.focus-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #2e7d32 0%, #4CAF50 100%);
+  color: white;
+  text-align: center;
+}
+
+.stats-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.stats-section p {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  opacity: 0.9;
+}
+
+.stats-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.stat-item h3 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* Image Gallery */
+.gallery-section {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.gallery-section .subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  height: 300px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.3));
+}
+
+/* Vision Section */
+.vision-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+}
+
+.vision-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.vision-image {
+  width: 100%;
+  height: 450px;
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+.vision-content h2 {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 25px;
+  font-weight: 900;
+}
+
+.vision-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #66bb6a 0%, #4CAF50 100%);
+  text-align: center;
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.cta-section .btn {
+  background: white;
+  color: #4CAF50;
+}
+
+.cta-section .btn:hover {
+  background: #f5f5f5;
+  color: #2e7d32;
+}
+
+/* Blog Section */
+.blog-section {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.blog-section .subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.blog-image {
+  width: 100%;
+  height: 220px;
+  background: #e0e0e0;
+}
+
+.blog-content {
+  padding: 25px;
+}
+
+.blog-content h3 {
+  font-size: 1.3rem;
+  color: #2e7d32;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.blog-content p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.blog-content a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  color: #ccc;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.social-links a {
+  color: #9cc914;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.social-links a:hover {
+  color: #1ee024;
+  transform: translateY(-3px);
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #9cc914;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #1ee024;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  
+  #menu-toggle {
+    display: block;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .vision-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .focus-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+</style>
 </head>
 <body>
+
 <header>
-  <div class="logo-title">
-    <img src="images/logo.png" alt="GROW4LIBERTY logo" class="logo">
-    <h1><span class="grow">GROW</span><span class="four">4</span><span class="liberty">LIBERTY</span></h1>
+  <div class="header-container">
+    <div class="logo-title">
+      <img src="images/logo.png" alt="GROW4LIBERTY logo" class="logo">
+      <h1><span class="grow">GROW</span><span class="four">4</span><span class="liberty">LIBERTY</span></h1>
+    </div>
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="team.html">Teams</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="menu-toggle">☰</button>
   </div>
-  <nav id="navbar">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="get-involved.html">Get Involved</a>
-    <a href="team.html">Teams</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <button id="menu-toggle">☰</button>
 </header>
 
 <section class="hero">
@@ -149,58 +597,146 @@ color: #1ee024;
   <div class="hero-slide" style="background-image: url('images/slide2.jpg');"></div>
   <div class="hero-slide" style="background-image: url('images/slide3.jpg');"></div>
   <div class="hero-slide" style="background-image: url('images/slide4.jpg');"></div>
-
-  <h2>Cultivating Freedom, Innovation & Sustainable Growth</h2>
-  <p>Empowering communities through sustainable farming, entrepreneurship, and liberty.</p>
-  <a href="programs.html" class="btn">Explore Our Programs</a>
+  
+  <div class="hero-content">
+    <p class="hero-subtitle">Welcome to GROW4LIBERTY!</p>
+    <h2>Cultivating Freedom, Innovation & Sustainable Growth</h2>
+    <p>Empowering communities through sustainable farming, entrepreneurship, and liberty.</p>
+    <a href="programs.html" class="btn">Explore Our Programs</a>
+  </div>
 </section>
 
-<section class="section">
-  <h2>Our Mission</h2>
-  <p>GROW4LIBERTY (G4L) is a non-profit organization dedicated to training individuals and communities in sustainable urban farming, entrepreneurial skills, agricultural value addition, and promoting inclusive, liberty-driven development across Africa and beyond.</p>
-  <a href="get-involved.html" class="btn">Join the Movement</a>
+<section class="story-section">
+  <div class="story-container">
+    <h2>Our Story</h2>
+    <p>GROW4LIBERTY (G4L) is a non-profit organization dedicated to training individuals and communities in sustainable urban farming, entrepreneurial skills, agricultural value addition, and promoting inclusive, liberty-driven development across Africa and beyond.</p>
+    <p>We believe that by integrating sustainable solutions, community engagement, and empowering individuals with practical skills, we can build a future that is resilient, inclusive, and economically vibrant.</p>
+  </div>
 </section>
 
-<section class="pillars-section">
-  <h2>Core Pillars of Grow4Liberty</h2>
-  <div class="pillars-grid">
-    <div class="pillar-card">
-      <div class="pillar-icon">
-        <i class="fas fa-hand-holding-heart"></i>
+<section class="focus-section">
+  <div class="focus-container">
+    <h2>Our Key Focus Areas</h2>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-icon">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <h3>Liberty</h3>
+        <p>We are committed to promoting self-reliance and individual freedom through access to practical agricultural and digital skills that empower communities.</p>
       </div>
-      <h3>Liberty</h3>
-      <p>Promoting self-reliance and individual freedom through access to practical agricultural and digital skills.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-icon">
-        <i class="fas fa-users"></i>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Inclusivity</h3>
+        <p>Creating opportunities for all, including women and persons with disabilities, to thrive in agriculture and technology while building sustainable futures.</p>
       </div>
-      <h3>Inclusivity</h3>
-      <p>Creating opportunities for all, including women and persons with disabilities, to thrive in agriculture and technology.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-icon">
-        <i class="fas fa-lightbulb"></i>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Entrepreneurship</h3>
+        <p>We believe that innovation and enterprise drive real change. We encourage urban farming startups and tech-driven agribusiness models.</p>
       </div>
-      <h3>Entrepreneurship</h3>
-      <p>Encouraging innovation and enterprise through urban farming startups and tech-driven agribusiness models.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-icon">
-        <i class="fas fa-leaf"></i>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3>Sustainability</h3>
+        <p>Advancing climate-smart farming and digital solutions that foster long-term environmental and economic resilience for future generations.</p>
       </div>
-      <h3>Sustainability</h3>
-      <p>Advancing climate-smart farming and digital solutions that foster long-term environmental and economic resilience.</p>
     </div>
   </div>
 </section>
 
-<section class="section cta">
-  <h2>Be part of a growing community working towards freedom, sustainability, and innovation.</h2>
-  <a href="get-involved.html" class="btn">Get Involved</a>
+<section class="stats-section">
+  <h2>We Take Action. To Make Better Changes</h2>
+  <p>Our impact speaks for itself. Join us in creating lasting change.</p>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <h3>500+</h3>
+      <p>People Trained</p>
+    </div>
+    <div class="stat-item">
+      <h3>50+</h3>
+      <p>Communities Reached</p>
+    </div>
+    <div class="stat-item">
+      <h3>100+</h3>
+      <p>Active Volunteers</p>
+    </div>
+  </div>
 </section>
 
-<footer class="footer">
+<section class="gallery-section">
+  <div class="gallery-container">
+    <h2>GROW4LIBERTY in Action</h2>
+    <p class="subtitle">From urban farms to tech-driven solutions, we're on a mission to revolutionize agriculture and empower communities across Africa.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+    </div>
+  </div>
+</section>
+
+<section class="vision-section">
+  <div class="vision-container">
+    <div class="vision-image"></div>
+    <div class="vision-content">
+      <h2>A Vision Rooted in Impact</h2>
+      <p>At GROW4LIBERTY, we envision a future where communities thrive through sustainable agriculture, where entrepreneurs build innovative businesses, and where individuals have the freedom and skills to create their own prosperity.</p>
+      <p>Our approach is rooted in action, education, and collaboration, ensuring that every person we reach becomes an agent of positive change in their community.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Become Our Volunteer</h2>
+  <p style="font-size: 1.2rem; margin-bottom: 35px;">Are you passionate about sustainable agriculture, innovation, and making a real impact? Join GROW4LIBERTY and be part of a movement transforming lives!</p>
+  <a href="get-involved.html" class="btn">Get Involved Today</a>
+</section>
+
+<section class="blog-section">
+  <div class="blog-container">
+    <h2>News & Updates</h2>
+    <p class="subtitle">Stay tuned for exclusive updates on our programs, events, and success stories from the field!</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-image"></div>
+        <div class="blog-content">
+          <h3>Empowering Youth Through Urban Farming</h3>
+          <p>Discover how our latest training program is helping young entrepreneurs start their own sustainable farming businesses in urban areas.</p>
+          <a href="blog.html">Read More »</a>
+        </div>
+      </div>
+      
+      <div class="blog-card">
+        <div class="blog-image"></div>
+        <div class="blog-content">
+          <h3>Technology Meets Agriculture</h3>
+          <p>Learn about the innovative digital tools we're introducing to help farmers increase productivity and reach new markets.</p>
+          <a href="blog.html">Read More »</a>
+        </div>
+      </div>
+      
+      <div class="blog-card">
+        <div class="blog-image"></div>
+        <div class="blog-content">
+          <h3>Building Inclusive Communities</h3>
+          <p>Read inspiring stories of how we're creating opportunities for women and persons with disabilities in agriculture.</p>
+          <a href="blog.html">Read More »</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
   <div class="social-links">
     <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -214,22 +750,47 @@ color: #1ee024;
 </footer>
 
 <script>
+// Hero Slideshow
 let slides = document.querySelectorAll('.hero-slide');
 let current = 0;
+
 function showSlide(index) {
   slides.forEach((slide, i) => {
-    slide.style.opacity = i === index ? '1' : '0';
+    if (i === index) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
   });
 }
+
 function nextSlide() {
   current = (current + 1) % slides.length;
   showSlide(current);
 }
+
 showSlide(current);
 setInterval(nextSlide, 5000);
-</script>
 
-<script src="js/script.js"></script>
+// Mobile menu toggle
+document.getElementById('menu-toggle').addEventListener('click', function() {
+  const nav = document.getElementById('navbar');
+  if (nav.style.display === 'flex') {
+    nav.style.display = 'none';
+  } else {
+    nav.style.display = 'flex';
+    nav.style.flexDirection = 'column';
+    nav.style.position = 'absolute';
+    nav.style.top = '70px';
+    nav.style.right = '20px';
+    nav.style.background = 'white';
+    nav.style.padding = '20px';
+    nav.style.borderRadius = '5px';
+    nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+  }
+});
+</script>
 
 </body>
 </html>
+EOF
