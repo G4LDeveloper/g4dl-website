@@ -6,40 +6,129 @@
 <title>Get Involved – GROW4LIBERTY</title>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* Section Styling */
+.get-involved-section {
+  background: #2e7d32; /* Primary green */
+  padding: 60px 20px;
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 50px auto;
+  color: #fff;
+  text-align: center;
+}
+.get-involved-section h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ffeb3b; /* Bright yellow for emphasis */
+  margin-bottom: 20px;
+}
+.get-involved-section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Program Cards */
+.program-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+.program-card {
+  background: #f9fdf7;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 25px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+.program-card h3 {
+  color: #2e7d32;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.program-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Register Button */
+.register-btn {
+  display: inline-block;
+  background: #2e7d32;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-top: auto;
+}
+.register-btn:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+.register-btn i {
+  margin-left: 8px;
+}
+</style>
 </head>
 <body>
+
 <header>
   <div class="logo-title">
-    <img src="images/logo.png" alt="GROW4LIBERTY logo" class="logo">
+    <img src="images/logo3.png" alt="GROW4LIBERTY logo" class="logo">
     <h1><span class="grow">GROW</span><span class="four">4</span><span class="liberty">LIBERTY</span></h1>
   </div>
   <nav id="navbar">
-    <a href="index.html">Home</a>
+    <a href="index4.html">Home</a>
     <a href="about.html">About</a>
     <a href="programs.html">Programs</a>
-    <a href="get-involved.html">Get Involved</a>
+    <a href="get-involved.html" class="active">Get Involved</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
   </nav>
   <button id="menu-toggle">☰</button>
 </header>
 
-<section class="section programs" style="background: rgba(0,0,0,0.8); padding: 3rem; margin: 2rem; border-radius: 15px;">
-  <h2 style="color: var(--bright-yellow);">Get Involved</h2>
-  <p style="color: var(--white);">Join GROW4LIBERTY in making an impact. Volunteer, partner with us, or donate to support community growth and sustainable development.</p>
+<section class="get-involved-section">
+  <h2>Get Involved</h2>
+  <p>Join GROW4LIBERTY in making a meaningful impact. Volunteer, partner with us, or donate to support community growth and sustainable development.</p>
 
   <div class="program-cards">
     <div class="program-card">
       <h3>Volunteer Opportunities</h3>
-      <p>Help us with urban farming projects, workshops, and community initiatives to make a difference.</p>
+      <p>Help us with urban farming projects, workshops, and community initiatives to make a real difference in local communities.</p>
+      <a href="https://forms.gle/6MyvaDPBLSkvEpNc8" target="_blank" class="register-btn">
+        Register as Volunteer <i class="fas fa-arrow-right"></i>
+      </a>
     </div>
     <div class="program-card">
       <h3>Partnerships</h3>
-      <p>Collaborate with us for sustainable development programs, training, and outreach projects.</p>
+      <p>Collaborate with us on sustainable development programs, training sessions, and outreach initiatives for greater impact.</p>
+      <a href="https://forms.gle/Fmx399NphjRbxXtA7" class="register-btn">
+        Partner With Us <i class="fas fa-handshake"></i>
+      </a>
     </div>
     <div class="program-card">
       <h3>Donations</h3>
-      <p>Support our mission financially to empower communities and promote freedom and sustainability.</p>
+      <p>Support our mission financially to empower communities and promote freedom, sustainability, and innovation.</p>
+      <a href="contact.html" class="register-btn">
+        Donate Now <i class="fas fa-heart"></i>
+      </a>
     </div>
   </div>
 </section>
@@ -53,7 +142,7 @@
     <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.tiktok.com/@grow4liberty" target="_blank"><i class="fab fa-tiktok"></i></a>
   </div>
-  <p>&copy; 2025 GROW4LIBERTY</p>
+  <p>&copy; 2025 GROW4LIBERTY. Empowering Youth through Sustainable Farming and Digital Innovation.</p>
 </footer>
 
 <script src="js/script.js"></script>

@@ -1,4 +1,3 @@
-cat >> blog.html <<'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +6,157 @@ cat >> blog.html <<'EOF'
 <title>News & Newsletter – GROW4LIBERTY</title>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* Reset & Body */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Lato', sans-serif; background: #f4f8f6; color: #333; line-height: 1.6; }
+
+/* Header */
+header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 15px 20px; background: #2e7d32; color: white; position: sticky; top: 0; z-index: 1000; }
+.logo-title { display: flex; align-items: center; gap: 15px; }
+.logo { height: 60px; width: auto; object-fit: contain; }
+.logo-title h1 { font-size: 1.8rem; font-weight: 900; }
+.logo-title h1 .grow { color: #fff; }
+.logo-title h1 .four { color: #ffeb3b; }
+.logo-title h1 .liberty { color: #fff; }
+nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; }
+nav a.active { border-bottom: 2px solid #ffeb3b; padding-bottom: 2px; }
+#menu-toggle { display: none; }
+
+/* Sections */
+.section { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
+.section h2 { text-align: center; margin-bottom: 30px; font-weight: 900; color: #2e7d32; }
+.section p { text-align: center; max-width: 800px; margin: 0 auto 40px; }
+
+/* Newsletter Grid */
+.newsletter-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+.newsletter-item {
+  width: 100%;
+  max-width: 350px;
+  background: #f9fdf7;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.newsletter-item:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.15); }
+
+/* Newsletter Cover */
+.newsletter-cover { position: relative; overflow: hidden; }
+.newsletter-cover img { width: 100%; height: 220px; object-fit: cover; }
+.newsletter-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #2e7d32;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 2;
+}
+
+/* Newsletter Info */
+.newsletter-info { padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.newsletter-info h3 { font-size: 1.2rem; color: #2e7d32; }
+.newsletter-info p { font-size: 0.95rem; color: #555; }
+.newsletter-actions { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-outline { padding: 10px 15px; border: 1px solid #2e7d32; border-radius: 5px; color: #2e7d32; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.btn-outline:hover { background: #2e7d32; color: white; }
+.btn-text { padding: 10px 15px; color: #2e7d32; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.btn-text:hover { color: #4caf50; text-decoration: underline; }
+
+/* Blog Grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+.blog-card {
+  width: 100%;
+  max-width: 350px;
+  background: #f9fdf7;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.15); }
+.blog-image img { width: 100%; height: 220px; object-fit: cover; }
+.blog-content { padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.blog-content h3 { font-size: 1.1rem; color: #2e7d32; }
+.blog-date { font-size: 0.85rem; color: #777; }
+.blog-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.tag { font-size: 0.8rem; background: #e8f5e9; color: #2e7d32; padding: 3px 8px; border-radius: 5px; display: flex; align-items: center; gap: 3px; }
+
+/* Newsletter Form */
+.newsletter-section { background: #e8f5e9; padding: 50px 20px; border-radius: 15px; margin: 50px auto; max-width: 1200px; }
+.newsletter-container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: center; }
+.newsletter-content { flex: 1 1 350px; text-align: center; }
+.newsletter-content h2 { color: #2e7d32; margin-bottom: 15px; }
+.newsletter-content p { color: #555; }
+.newsletter-form { flex: 1 1 350px; }
+.newsletter-form form { display: flex; flex-direction: column; gap: 15px; }
+.form-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.form-field { flex: 1 1 150px; position: relative; }
+.form-field input { width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid #ccc; }
+.form-field i { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #4caf50; }
+.form-field input:focus { outline: none; border-color: #2e7d32; }
+.form-field-checkbox { display: flex; align-items: center; gap: 10px; }
+.newsletter-btn { background: #2e7d32; color: white; padding: 15px 20px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.newsletter-btn:hover { background: #4caf50; }
+.privacy-note { font-size: 0.75rem; color: #555; }
+
+/* CTA */
+.cta { text-align: center; padding: 50px 20px; background: #dcedc8; border-radius: 15px; margin: 50px auto; }
+.cta h2 { color: #2e7d32; margin-bottom: 20px; }
+.cta p { color: #555; margin-bottom: 20px; }
+.cta .btn { background: #2e7d32; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+.cta .btn:hover { background: #4caf50; }
+
+/* Footer */
+footer { background: #2e7d32; color: white; padding: 40px 20px; text-align: center; margin-top: 80px; }
+.social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+.social-links a { color: white; font-size: 1.5rem; display: flex; align-items: center; gap: 5px; }
+.social-links a span { display: none; }
+footer a { color: white; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .newsletter-container { flex-direction: column; text-align: center; }
+  .form-row { flex-direction: column; }
+}
+</style>
 </head>
 <body>
+
 <header>
   <div class="logo-title">
-    <img src="images/ourlogo.png" alt="GROW4LIBERTY logo" class="logo">
+    <img src="images/logo3.png" alt="GROW4LIBERTY logo" class="logo">
     <h1><span class="grow">GROW</span><span class="four">4</span><span class="liberty">LIBERTY</span></h1>
   </div>
   <nav id="navbar">
-    <a href="index.html">Home</a>
+    <a href="index4.html">Home</a>
     <a href="about.html">About</a>
     <a href="programs.html">Programs</a>
     <a href="get-involved.html">Get Involved</a>
     <a href="blog.html" class="active">Blog</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <button id="menu-toggle">☰</button>
 </header>
 
 <section class="section">
@@ -30,49 +164,34 @@ cat >> blog.html <<'EOF'
   <p>Stay updated with the latest stories, insights, and monthly newsletters on sustainable farming, digital innovation, and youth empowerment.</p>
 </section>
 
-<!-- Newsletter Archive (Only One Card for Latest Newsletter) -->
 <section class="section" style="background: var(--light-bg);">
   <h2><i class="fas fa-book-open"></i> Latest Newsletter</h2>
   <p class="archive-subtitle">Read or download our most recent newsletter edition</p>
-  
   <div class="newsletter-archive-grid">
-
-    <!-- Latest Newsletter Card (October 2025) -->
     <div class="newsletter-item">
       <div class="newsletter-cover">
         <img src="images/newsletter-Oct.png" alt="October 2025 Newsletter Cover">
-        <div class="newsletter-badge">
-          <i class="fas fa-file-pdf"></i> PDF
-        </div>
+        <div class="newsletter-badge"><i class="fas fa-file-pdf"></i> PDF</div>
       </div>
       <div class="newsletter-info">
         <span class="newsletter-date"><i class="far fa-calendar"></i> October 2025</span>
         <h3>Grow4Liberty October 2025 Newsletter</h3>
         <p>Cultivating Change — Empowering Youth, Building Sustainable Communities. Featuring Truth FM interview, Goldenlife Victors training, team spotlights, and more.</p>
         <div class="newsletter-actions">
-          <a href="newsletter/october-2025.pdf" class="btn-outline" target="_blank">
-            <i class="fas fa-download"></i> Download PDF
-          </a>
-          <a href="#october-stories" class="btn-text">
-            <i class="fas fa-newspaper"></i> Read Stories
-          </a>
+          <a href="newsletter/october-2025.pdf" class="btn-outline" target="_blank"><i class="fas fa-download"></i> Download PDF</a>
+          <a href="#october-stories" class="btn-text"><i class="fas fa-newspaper"></i> Read Stories</a>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- Featured Stories from Latest Newsletter -->
 <section class="section" id="october-stories">
   <h2><i class="fas fa-star"></i> Featured Stories - October 2025</h2>
   <div class="blog-grid">
-    
-    <!-- Article 1: Truth FM Feature -->
+    <!-- Article 1 -->
     <div class="blog-card">
-      <div class="blog-image">
-        <img src="images/truth-fm.jpg" alt="Truth FM Interview">
-      </div>
+      <div class="blog-image"><img src="images/truth-fm.jpg" alt="Truth FM Interview"></div>
       <div class="blog-content">
         <span class="blog-date"><i class="far fa-calendar"></i> October 9, 2025</span>
         <h3>Building Sustainable Urban Communities through Urban Farming</h3>
@@ -84,11 +203,9 @@ cat >> blog.html <<'EOF'
       </div>
     </div>
 
-    <!-- Article 2: Goldenlife Training -->
+    <!-- Article 2 -->
     <div class="blog-card">
-      <div class="blog-image">
-        <img src="images/goldenlife-training.jpg" alt="Goldenlife Victors Training">
-      </div>
+      <div class="blog-image"><img src="images/goldenlife-training.jpg" alt="Goldenlife Victors Training"></div>
       <div class="blog-content">
         <span class="blog-date"><i class="far fa-calendar"></i> November 1, 2025</span>
         <h3>Transformative Training at Goldenlife Victors, Naivasha</h3>
@@ -100,11 +217,9 @@ cat >> blog.html <<'EOF'
       </div>
     </div>
 
-    <!-- Article 3: Susan Kageni Profile -->
+    <!-- Article 3 -->
     <div class="blog-card">
-      <div class="blog-image">
-        <img src="images/susan-kageni.jpg" alt="Susan Kageni">
-      </div>
+      <div class="blog-image"><img src="images/susan-kageni.jpg" alt="Susan Kageni"></div>
       <div class="blog-content">
         <span class="blog-date"><i class="far fa-calendar"></i> October 2025</span>
         <h3>Inspiring the Next Generation: The Story of Susan Kageni</h3>
@@ -116,11 +231,9 @@ cat >> blog.html <<'EOF'
       </div>
     </div>
 
-    <!-- Article 4: Caren's Reflection -->
+    <!-- Article 4 -->
     <div class="blog-card">
-      <div class="blog-image">
-        <img src="images/caren-chebichii.jpg" alt="Caren Chebichii">
-      </div>
+      <div class="blog-image"><img src="images/caren-chebichii.jpg" alt="Caren Chebichii"></div>
       <div class="blog-content">
         <span class="blog-date"><i class="far fa-calendar"></i> October 2025</span>
         <h3>Empowering Communities Through Modern Urban Agriculture</h3>
@@ -131,19 +244,16 @@ cat >> blog.html <<'EOF'
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- Newsletter Subscription Section (Below Featured Stories) -->
 <section class="newsletter-section">
   <div class="newsletter-container">
     <div class="newsletter-content">
-      <i class="fas fa-envelope-open-text newsletter-icon"></i>
+      <i class="fas fa-envelope-open-text newsletter-icon" style="font-size:3rem;color:#2e7d32;margin-bottom:15px;"></i>
       <h2>Subscribe to Our Newsletter</h2>
       <p>Get the latest updates on sustainable farming, digital literacy programs, success stories, and upcoming events delivered straight to your inbox every month!</p>
     </div>
-    
     <div class="newsletter-form">
       <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div class="form-row">
@@ -151,31 +261,22 @@ cat >> blog.html <<'EOF'
             <i class="fas fa-user"></i>
             <input type="text" name="name" placeholder="Your Name" required>
           </div>
-          
           <div class="form-field">
             <i class="fas fa-envelope"></i>
             <input type="email" name="email" placeholder="Your Email" required>
           </div>
         </div>
-        
         <div class="form-field-checkbox">
           <input type="checkbox" id="updates" name="updates" value="yes" checked>
           <label for="updates">I want to receive monthly newsletters and updates</label>
         </div>
-        
-        <button type="submit" class="btn newsletter-btn">
-          <i class="fas fa-paper-plane"></i> Subscribe Now
-        </button>
-        
-        <p class="privacy-note">
-          <i class="fas fa-lock"></i> We respect your privacy. Unsubscribe at any time.
-        </p>
+        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i> Subscribe Now</button>
+        <p class="privacy-note"><i class="fas fa-lock"></i> We respect your privacy. Unsubscribe at any time.</p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- Call to Action -->
 <section class="section cta">
   <h2>Want to Be Part of Our Story?</h2>
   <p>Join Grow4Liberty as we continue to empower youth and build sustainable communities through agriculture and digital innovation.</p>
@@ -184,24 +285,12 @@ cat >> blog.html <<'EOF'
 
 <footer class="footer">
   <div class="social-links">
-    <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank">
-      <i class="fab fa-facebook"></i><span>Facebook</span>
-    </a>
-    <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank">
-      <i class="fab fa-linkedin"></i><span>LinkedIn</span>
-    </a>
-    <a href="https://x.com/Grow4Liberty" target="_blank">
-      <i class="fab fa-x-twitter"></i><span>X</span>
-    </a>
-    <a href="https://www.instagram.com/grow4liberty" target="_blank">
-      <i class="fab fa-instagram"></i><span>Instagram</span>
-    </a>
-    <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank">
-      <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
-    </a>
-    <a href="https://www.tiktok.com/@grow4liberty" target="_blank">
-      <i class="fab fa-tiktok"></i><span>TikTok</span>
-    </a>
+    <a href="https://web.facebook.com/people/Grow-For-Liberty/61579649978237/" target="_blank"><i class="fab fa-facebook"></i><span>Facebook</span></a>
+    <a href="https://ke.linkedin.com/company/grow4liberty" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+    <a href="https://x.com/Grow4Liberty" target="_blank"><i class="fab fa-x-twitter"></i><span>X</span></a>
+    <a href="https://www.instagram.com/grow4liberty" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+    <a href="https://whatsapp.com/channel/0029VbCUu6jI8l1FulXwFr28" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+    <a href="https://www.tiktok.com/@grow4liberty" target="_blank"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
   </div>
   <p><strong>Email:</strong> <a href="mailto:info.growforliberty@gmail.com"><i class="fas fa-envelope"></i> info.growforliberty@gmail.com</a></p>
   <p>&copy; 2025 GROW4LIBERTY. Empowering Youth through Sustainable Farming and Digital Innovation.</p>
@@ -210,4 +299,3 @@ cat >> blog.html <<'EOF'
 <script src="js/script.js"></script>
 </body>
 </html>
-EOF

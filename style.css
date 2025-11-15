@@ -305,4 +305,12 @@ header {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  .newsletter-cover img { height: 180px; }
+.blog-image img { height: 180px; }
+
+.newsletter-info { padding: 15px; }
+.blog-content { padding: 15px; }
+
+.newsletter-item, .blog-card { max-width: 320px; }
 }
+

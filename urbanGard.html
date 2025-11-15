@@ -85,13 +85,43 @@ header {
 
 /* Hero Section */
 .training-hero {
-  background: linear-gradient(135deg, rgba(46, 125, 50, 0.95), rgba(76, 175, 80, 0.95)),
-              url('images/urban-gardening-bg.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative;
   padding: 100px 20px;
   text-align: center;
   color: white;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.training-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.3), rgba(76, 175, 80, 0.3));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .training-hero h1 {
@@ -99,6 +129,8 @@ header {
   font-weight: 900;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
 }
 
 .training-hero p {
@@ -106,12 +138,16 @@ header {
   max-width: 800px;
   margin: 0 auto 30px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
 }
 
 .hero-icon {
   font-size: 4rem;
   margin-bottom: 20px;
   opacity: 0.9;
+  position: relative;
+  z-index: 2;
 }
 
 /* Content Section */
@@ -374,11 +410,17 @@ footer a:hover {
 </header>
 
 <section class="training-hero">
-  <div class="hero-icon">
-    <i class="fas fa-city"></i>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="images/urbanGard.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content">
+    <div class="hero-icon">
+      <i class="fas fa-city"></i>
+    </div>
+    <h1>Urban Gardening Training</h1>
+    <p>Transform your urban space into a thriving green oasis and sustainable food source</p>
   </div>
-  <h1>Urban Gardening Training</h1>
-  <p>Transform your urban space into a thriving green oasis and sustainable food source</p>
 </section>
 
 <section class="training-content">

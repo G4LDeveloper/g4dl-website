@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<awport" content="width=device-width,initial-scale=1" />
+<title>Digital Literacy — GROW4LIBERTY</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  /* Minimal, page-specific styling — page uses same look & feel as your site */
+  :root { --green:#2e7d32; --accent:#4CAF50; --light:#f9f9f9; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Lato',sans-serif;color:#222;line-height:1.6;background:#fff}
+  header{background:linear-gradient(135deg,var(--green) 0%,var(--accent) 100%);padding:15px 0;position:sticky;top:0;z-index:9999;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+  .header-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{height:60px;object-fit:contain}
+  nav{display:flex;gap:6px;align-items:center}
+  nav>a, .dropdown>a{color:#fff;text-decoration:none;padding:10px 15px;border-radius:5px;font-weight:500}
+  nav>a:hover, .dropdown:hover>a{background:rgba(255,255,255,.12)}
+  .dropdown{position:relative}
+  .dropdown-content{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:220px;box-shadow:0 8px 16px rgba(0,0,0,.15);border-radius:6px;overflow:hidden;margin-top:0;z-index:1001}
+  .dropdown:hover .dropdown-content{display:block}
+  .dropdown-content a{display:block;padding:12px 18px;color:#333;text-decoration:none}
+  .dropdown-content a:hover{background:#f5f5f5;color:var(--green)}
+
+  /* Hero section styles */
+  .page-hero{
+    position: relative;
+    color:#fff;
+    padding:80px 20px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .page-hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: contain; /* ensures full video fits without cropping */
+    z-index: 0;
+  }
+  .page-hero .container {
+    position: relative;
+    z-index: 1; /* keep text/buttons above video */
+  }
+
+  .page-hero h1{font-size:2rem;margin-bottom:10px;font-weight:900}
+  .page-hero p{opacity:.95;margin-bottom:18px}
+  .container{max-width:1100px;margin:40px auto;padding:0 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+  .card{background:#fff;border-radius:10px;padding:22px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+  .module h3{margin-bottom:10px;color:var(--green)}
+  ul.bullets{margin-top:12px;padding-left:18px;color:#444}
+  .cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(76,175,80,.2)}
+  .btn.secondary{background:#fff;color:var(--accent);border:1px solid rgba(0,0,0,.06)}
+  .schedule{background:var(--light);padding:18px;border-radius:8px}
+  footer{background:var(--green);color:#fff;padding:30px 20px;text-align:center;margin-top:40px}
+  @media (max-width:968px){ .header-container{padding:0 12px} .page-hero{padding:60px 20px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo-title">
+      <a href="index4.html"><img src="images/logo3.png" alt="GROW4LIBERTY" class="logo" onerror="this.style.display='none'"></a>
+    </div>
+
+    <nav id="navbar">
+      <a href="index4.html">Home</a>
+
+      <div class="dropdown">
+        <a>Who We Are <i class="fas fa-angle-down" style="margin-left:6px;"></i></a>
+        <div class="dropdown-content">
+          <a href="about.html">About Us</a>
+          <a href="mission.html">Our Mission</a>
+          <a href="vision.html">Our Vision</a>
+          <a href="team.html">Our Team</a>
+          <a href="partners.html">Partners</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a>What We Do <i class="fas fa-angle-down" style="margin-left:6px;"></i></a>
+        <div class="dropdown-content">
+          <a href="programs.html">Our Programs</a>
+          <a href="training.html">Training & Workshops</a>
+          <a href="projects.html">Current Projects</a>
+          <a href="impact.html">Our Impact</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a>Training & Skills <i class="fas fa-angle-down" style="margin-left:6px;"></i></a>
+        <div class="dropdown-content">
+          <a href="mushroom.html">Mushroom Farming</a>
+          <a href="urbanGard.html">Urban Gardening</a>
+          <a href="BeeKeeping.html">Beekeeping</a>
+          <a href="DititalLit.html">Digital Literacy</a>
+          <a href="training-bsf.html">BSF Farming</a>
+          <a href="training-profitable.html">Profitable Farming</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a>Media <i class="fas fa-angle-down" style="margin-left:6px;"></i></a>
+        <div class="dropdown-content">
+          <a href="blog.html">Blog</a>
+          <a href="news.html">News & Updates</a>
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="videos.html">Videos</a>
+          <a href="publications.html">Publications</a>
+        </div>
+      </div>
+
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <!-- Video background -->
+  <video autoplay muted loop playsinline>
+    <source src="images/bsf2.mp4" type="video/mp4">
+    Your browser does not support the video tag
+  </video>
+
+  <div class="container">
+    <h1>Digital Literacy Training</h1>
+    <p>Build practical digital skills for work, entrepreneurship and community development — from basic computer use to online safety and digital tools for agribusiness.</p>
+    <a class="btn" href="#signup">Join a Cohort</a>
+  </div>
+</section>
+
+<main class="container" id="main-content">
+
+  <section class="grid" aria-labelledby="about-program">
+    <div class="card">
+      <h2 id="about-program">About this program</h2>
+      <p style="margin-top:10px">Our Digital Literacy program equips learners with practical, hands-on knowledge they can apply immediately. The course is beginner-friendly and designed with rural and urban participants in mind.</p>
+
+      <div style="margin-top:16px;">
+        <strong>Learning outcomes</strong>
+        <ul class="bullets" style="margin-top:10px">
+          <li>Use a computer, mobile device and common office applications.</li>
+          <li>Access online markets, banking and digital tools for small businesses.</li>
+          <li>Practice strong password hygiene, identify phishing and stay safer online.</li>
+          <li>Use social media and messaging responsibly for community engagement and marketing.</li>
+        </ul>
+      </div>
+
+      <div class="cta" style="margin-top:18px">
+        <a class="btn" href="#signup">Sign Up</a>
+        <a class="btn secondary" href="programs.html">See Other Programs</a>
+      </div>
+    </div>
+
+    <div class="card schedule" aria-labelledby="schedule-title">
+      <h3 id="schedule-title">Course structure & schedule</h3>
+
+      <div style="margin-top:12px">
+        <strong>Format</strong>
+        <p style="margin-top:6px">Blended — in-person workshops + guided remote sessions. Practical labs every week.</p>
+
+        <strong style="display:block;margin-top:12px">Duration</strong>
+        <p style="margin-top:6px">6 weeks (2 sessions per week, 3 hours each) or an accelerated 3-week cohort (weekend intensive).</p>
+
+        <strong style="display:block;margin-top:12px">Modules</strong>
+        <ul class="bullets" style="margin-top:8px">
+          <li>Intro to devices & operating systems</li>
+          <li>Internet fundamentals & online safety</li>
+          <li>Productivity tools: docs, sheets, slides</li>
+          <li>Communication: email, messaging, scheduling</li>
+          <li>Digital marketing basics & selling online</li>
+          <li>Using phones for farm data & market access</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:14px">
+        <strong>Who should apply?</strong>
+        <p style="margin-top:6px">Youth, farmers, women entrepreneurs, community group leaders and anyone who wants to use digital tools to grow livelihoods.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:28px" aria-labelledby="modules">
+    <div class="card module">
+      <h3>Module highlights</h3>
+      <p style="margin-top:10px">Hands-on lessons with practical outcomes — you will leave with a real plan to use digital tools for income/efficiency.</p>
+      <ul class="bullets" style="margin-top:12px">
+        <li>Create and share documents, track simple budgets in a spreadsheet.</li>
+        <li>Set up an email, use calendar invites and maintain contacts.</li>
+        <li>Capture quality photos and list products on marketplaces.</li>
+        <li>Protect your accounts: passwords, 2FA, spotting scams.</li>
+        <li>Intro to simple digital bookkeeping and invoicing.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Support & devices</h3>
+      <p style="margin-top:10px">We provide training devices during in-person sessions when needed. We also help learners set up low-cost or free tools that run on basic smartphones.</p>
+
+      <h4 style="margin-top:12px">Cost & scholarships</h4>
+      <p style="margin-top:8px">Course fees are kept affordable. Scholarships and group discounts available — contact the team for details.</p>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:28px">
+    <h3>Register / Contact</h3>
+    <p style="margin-top:8px">Fill the form or contact us and we will help you join the next cohort.</p>
+
+    <form id="signup" style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;">
+      <input name="name" placeholder="Full name" required style="padding:10px;border-radius:6px;border:1px solid #e6e6e6" />
+      <input name="phone" placeholder="Phone or WhatsApp" required style="padding:10px;border-radius:6px;border:1px solid #e6e6e6" />
+      <input name="email" placeholder="Email (optional)" style="padding:10px;border-radius:6px;border:1px solid #e6e6e6" />
+      <select name="cohort" style="padding:10px;border-radius:6px;border:1px solid #e6e6e6">
+        <option value="next">Next available cohort</option>
+        <option value="weekend">Weekend intensive</option>
+        <option value="custom">Set up for our group</option>
+      </select>
+      <textarea name="notes" placeholder="Tell us about your goals (optional)" style="grid-column:1/3;padding:10px;border-radius:6px;border:1px solid #e6e6e6;min-height:100px"></textarea>
+      <div style="grid-column:1/3;display:flex;gap:10px;justify-content:flex-start;align-items:center">
+        <button type="submit" class="btn">Send registration</button>
+        <a class="btn secondary" href="contact.html">Contact team</a>
+      </div>
+    </form>
+
+    <p style="margin-top:12px;font-size:.95rem;color:#555">Note: the form on this static page will need a backend (or form service) to process registrations. We can integrate Google Forms, Netlify Forms, or a simple server endpoint — tell me which you prefer and I'll give the code.</p>
+  </section>
+
+  <section style="margin-top:28px" class="grid">
+    <div class="card">
+      <h3>Local partnerships</h3>
+      <p style="margin-top:10px">We work with local community centres, libraries and youth groups to host sessions. If you represent a group, request an on-site cohort.</p>
+    </div>
+    <div class="card">
+      <h3>Outcomes we track</h3>
+      <ul class="bullets" style="margin-top:10px">
+        <li>Number of learners setting up an email & online presence</li>
+        <li>Small businesses listing products online</li>
+        <li>Improved communication and record-keeping for farms and groups</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<section class="card" style="margin-top:28px">
+  <h3>Register / Contact</h3>
+  <p style="margin-top:8px">
+    To join the next Digital Literacy cohort, please complete the registration form below.
+  </p>
+
+  <div style="margin-top:20px; text-align:left;">
+    <a class="btn" 
+       href="https://forms.gle/3RHpAbJCFSau9yVv5"
+       target="_blank"
+       style="font-size:1.1rem; padding:14px 26px;">
+       Register via Google Form
+    </a>
+  </div>
+
+  <p style="margin-top:16px; font-size:.95rem; color:#555">
+    The form will open in a new tab. After submission, our team will contact you with cohort dates and instructions.
+  </p>
+</section>
+
+
+<footer>
+  <div style="max-width:1100px;margin:0 auto;padding:0 20px">
+    <p style="margin-bottom:8px"><strong>Email:</strong> <a href="mailto:info.growforliberty@gmail.com" style="color:#fff;text-decoration:underline">info.growforliberty@gmail.com</a></p>
+    <p>&copy; 2025 GROW4LIBERTY. Cultivating Freedom, Innovation & Sustainable Growth.</p>
+  </div>
+</footer>
+
+<script>
+  // Simple client-side submit handler (prevents reload in this static example)
+  document.getElementById('signup')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Thanks! Your registration has been received. We will contact you with cohort details.');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
